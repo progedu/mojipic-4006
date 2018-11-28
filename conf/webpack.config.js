@@ -2,6 +2,7 @@ const path = require('path');
 
 module.exports = {
   entry: './app/views/index.js',
+  mode: 'none',
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, '../public/javascripts')
@@ -15,22 +16,10 @@ module.exports = {
             loader: 'babel-loader',
             options: {
               presets: [
-                ['env', {'modules': false}],
-                'react'
+                ['@babel/preset-env', { 'modules': false }],
+                '@babel/preset-react'
               ]
             },
-  module: {
-    rules: [{
-      test: /.js$/,
-      exclude: /node_modules/,
-      use: {
-        loader: 'babel-loader',
-        options: {
-          presets: ['env']
-        }
-      }
-    }]
-  }
           }
         ],
         // node_modules は除外する
