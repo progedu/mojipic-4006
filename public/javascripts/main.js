@@ -11677,7 +11677,7 @@ jQuery.Velocity ? console.log("Velocity is already loaded. You may be needlessly
         g = function () {
       var e = 0;return t.webkitRequestAnimationFrame || t.mozRequestAnimationFrame || function (t) {
         var r,
-            a = new Date().getTime();return r = Math.max(0, 16 - (a - e)), e = a + r, setTimeout(function () {
+            a = Date.now();return r = Math.max(0, 16 - (a - e)), e = a + r, setTimeout(function () {
           t(a + r);
         }, r);
       };
